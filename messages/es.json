@@ -20,7 +20,10 @@
     "search": "Buscar...",
     "total":"Total",
     "page":"Página",
-    "actions":"Acciones"
+    "actions":"Acciones",
+    "cancel":"Cancelar",
+    "save":"Guardar",
+    "create":"Crear"  
   },
   "post": {
     "list": "Lista de posts",

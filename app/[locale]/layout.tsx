@@ -7,7 +7,6 @@ import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { Toaster } from "@/components/ui/sonner";
 import Navbar from "@/components/ui/navbar";
-import Container from "@/components/container/container";
 
 export const metadata: Metadata = {
   title: "Posts",
@@ -37,10 +36,8 @@ export default async function RootLayout({
       >
         <NextIntlClientProvider messages={messages}>
           <AppProvider>
-            <Container>
-              <Navbar />
-              {children}
-            </Container>
+            <Navbar />
+            {children}
             <Toaster />
           </AppProvider>
         </NextIntlClientProvider>

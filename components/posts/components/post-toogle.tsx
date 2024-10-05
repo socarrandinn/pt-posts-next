@@ -11,7 +11,7 @@ const PostToolbar = () => {
   return (
     <>
       <div className='flex flex-row justify-end'>
-        <Button variant="outline">{t('create')}</Button>
+        <Button onClick={onOpen} variant="outline">{t('create')}</Button>
       </div>
       <PostCreateDialog onOpen={onOpen} open={isOpen} onClose={onClose} title='create' />
     </>
