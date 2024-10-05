@@ -6,12 +6,14 @@ import { fontPrimary } from "@/config/fonts";
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { Toaster } from "@/components/ui/sonner";
+import Navbar from "@/components/ui/navbar";
+import Container from "@/components/container/container";
 
 export const metadata: Metadata = {
   title: "Posts",
   description: "Prueba tecnica CRUD de post",
   applicationName: "posts-next",
- 
+
 };
 
 export default async function RootLayout({
@@ -35,7 +37,10 @@ export default async function RootLayout({
       >
         <NextIntlClientProvider messages={messages}>
           <AppProvider>
-            {children}
+            <Container>
+              <Navbar />
+              {children}
+            </Container>
             <Toaster />
           </AppProvider>
         </NextIntlClientProvider>

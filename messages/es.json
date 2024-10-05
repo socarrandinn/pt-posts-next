@@ -1,3 +1,34 @@
 {
- 
+  "locales": {
+    "title": "Idiomas",
+    "es": "Español",
+    "en": "Inglés"
+  },
+  "theme": {
+    "dark": "Oscuro",
+    "light": "Claro",
+    "system": "Sistema"
+  },
+  "common": {
+    "columns": "Columnas",
+    "not-result": "No hay resultados",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "of": "de",
+    "rows": "fila/s",
+    "rows-selected": "fila/s seleccionada/s",
+    "search": "Buscar...",
+    "total":"Total",
+    "page":"Página",
+    "actions":"Acciones"
+  },
+  "post": {
+    "list": "Lista de posts",
+    "edit":"Editar post",
+    "create": "Crear post",
+    "field": {
+      "title": "Título",
+      "body": "Resumen"
+    }
+  }
 }

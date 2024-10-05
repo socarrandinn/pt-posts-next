@@ -1,3 +1,12 @@
 {
-  
+  "locales": {
+    "title": "Languages",
+    "es": "Spanish",
+    "en": "English"
+  },
+  "theme": {
+    "dark": "Dark",
+    "light": "Light",
+    "system": "System"
+  }
 }

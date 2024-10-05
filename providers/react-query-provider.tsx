@@ -9,7 +9,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 // Setup queryClient
 const queryClient = new QueryClient()
 
-export const REFERCH_INTERVAL = 5000 //5s
+export const REFETCH_INTERVAL = 5000 //5s
 
 
 
