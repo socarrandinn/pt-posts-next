@@ -1,14 +1,22 @@
 import { memo } from "react";
 import { LongTextProps } from "./LongText.types";
-import { TypographyP } from "@/components/ui/typography";
+import { cn } from "@/lib/utils";
 
-const LongText = ({ lineClamp, text, maxCharacters }: LongTextProps) => {
+const LongText = ({ lineClamp, text, className }: LongTextProps) => {
     return (
-        <TypographyP
-            className={`overflow-hidden text-ellipsis ${maxCharacters ? `max-w-[${maxCharacters}ch]` : 'w-full'} line-clamp-${lineClamp}`}
+        <p
+            className={cn(
+                "overflow-hidden text-ellipsis w-full",
+                className
+            )}
+            style={{
+                display: '-webkit-box',
+                WebkitBoxOrient: 'vertical',
+                WebkitLineClamp: lineClamp,
+            }}
         >
             {text}
-        </TypographyP>
+        </p>
     );
 };
 

@@ -7,7 +7,7 @@ interface ContainerProps {
 
 const Container: React.FC<ContainerProps> = ({ children, className = '' }) => {
   return (
-    <section className={`max-w-7xl w-full mt-8 mx-auto md:px-6 lg:px-8 ${className}`}>
+    <section className={`px-2 max-w-7xl w-full mt-8 mx-auto md:px-6 lg:px-8 ${className}`}>
       {children}
     </section>
   );

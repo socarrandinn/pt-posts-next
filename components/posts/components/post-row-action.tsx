@@ -16,7 +16,7 @@ const PostRowAction = ({ rowId, record }: PostRowActionProps) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" className="h-8 w-16 p-0">
+        <Button variant="ghost" className="h-8 w-8 md:w-16 p-0">
           <span className="sr-only">Open menu</span>
           <DotsHorizontalIcon className="h-4 w-4" />
         </Button>

@@ -16,7 +16,7 @@ type PostFormProps = {
   onClose?: () => void
 }
 export const usePostCreateForm = ({ initValues, onClose }: PostFormProps) => {
-  const t = useTranslations('post')
+  const t = useTranslations()
   const schema = postSchema(t)
   const queryClient = useQueryClient()
 

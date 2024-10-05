@@ -8,8 +8,10 @@ const TablePagination = ({ table }: { table: Table<any> }) => {
   return (
     <div className="flex items-center justify-end space-x-2 py-4">
       <div className="flex-1 text-sm text-muted-foreground">
-        <div>
-          {t('total')}: {table.getRowCount()} | {t('page')}: {table.getState().pagination.pageIndex + 1} {t('of')} {table.getPageCount()}
+        <div className='flex flex-col md:flex-row md:gap-2'>
+          <span>{t('total')}: {table.getRowCount()}</span>
+          <span className='hidden md:inline'>/</span>
+          <span>{t('page')}: {table.getState().pagination.pageIndex + 1} {t('of')} {table.getPageCount()}</span>
         </div>
       </div>
       <div className="space-x-2">

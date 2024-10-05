@@ -12,7 +12,7 @@ type PostFormProps = {
   onSubmit: any
 }
 const PostForm = ({ form, onSubmit }: PostFormProps) => {
-  const t = useTranslations('post')
+  const t = useTranslations()
 
   return (
     <Form {...form} >
@@ -22,9 +22,9 @@ const PostForm = ({ form, onSubmit }: PostFormProps) => {
           name="title"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>{t('field.title')}</FormLabel>
+              <FormLabel>{t('post.field.title')}</FormLabel>
               <FormControl>
-                <Input type="number" placeholder={t('investment.field.amount')} {...field} />
+                <Input type="number" placeholder={t('post.field.title')} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

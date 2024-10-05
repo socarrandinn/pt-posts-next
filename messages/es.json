@@ -18,20 +18,24 @@
     "rows": "fila/s",
     "rows-selected": "fila/s seleccionada/s",
     "search": "Buscar...",
-    "total":"Total",
-    "page":"Página",
-    "actions":"Acciones",
-    "cancel":"Cancelar",
-    "save":"Guardar",
-    "create":"Crear"  
+    "total": "Total",
+    "page": "Página",
+    "actions": "Acciones",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "create": "Crear"
   },
   "post": {
     "list": "Lista de posts",
-    "edit":"Editar post",
+    "edit": "Editar post",
     "create": "Crear post",
     "field": {
       "title": "Título",
       "body": "Resumen"
     }
+  },
+  "errors": {
+    "required": "Requerido",
+    "generalErrorMessage": "Ha ocurrido un error"
   }
 }
