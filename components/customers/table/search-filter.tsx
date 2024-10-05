@@ -13,7 +13,7 @@ type SearchFilterProps = {
 const SearchFilter = ({ table, filterKey }: SearchFilterProps) => {
   const t = useTranslations('common')
   return (
-    <div className="flex flex-col md:flex-row items-center py-4 gap-2">
+    <div className="flex flex-col-reverse md:flex-row items-center py-4 gap-2">
       <div className='flex flex-row gap-2 max-w-3xl w-full'>
         <Input
           placeholder={t('search')}
