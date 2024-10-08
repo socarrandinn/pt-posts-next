@@ -36,6 +36,14 @@
   },
   "errors": {
     "required": "Requerido",
-    "generalErrorMessage": "Ha ocurrido un error"
+    "generalErrorMessage": "Ha ocurrido un error",
+    "networkError":{
+      "title":"Error de red",
+      "description":"No se pudo cargar los datos debido a un error de red."
+    },
+    "error":{
+      "title":"Error",
+      "description":" Ha ocurrido un error al cargar los datos."
+    }
   }
 }

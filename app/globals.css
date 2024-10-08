@@ -6,6 +6,16 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* editor */
+.ql-toolbar.ql-snow {
+  border: none !important;
+  border-bottom: 1px solid #E5E5E560 !important;
+  box-sizing: content-box !important;
+}
+.ql-container.ql-snow{
+  border: none !important;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

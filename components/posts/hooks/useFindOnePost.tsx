@@ -1,7 +1,8 @@
+'use client'
 import { useQuery } from '@tanstack/react-query';
 import { useCallback } from 'react';
-import { PostService } from '../services';
 import { POST_ONE_KEY } from '../constants/query';
+import { PostService } from '@/lib/services';
 
 
 export const useFindOnePost = (id: number) => {

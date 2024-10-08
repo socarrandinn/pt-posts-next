@@ -4,6 +4,7 @@ import React from 'react'
 import { IPost } from '../interfaces/post'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
+import EditorForm from '@/components/common/editor-form/editor-from'
 
 type PostFormProps = {
   initValue?: Partial<IPost>
@@ -30,6 +31,7 @@ const PostForm = ({ form, onSubmit }: PostFormProps) => {
             </FormItem>
           )}
         />
+        <EditorForm name='body' title={t('post.field.body')} form={form} />
       </form>
     </Form >
   )

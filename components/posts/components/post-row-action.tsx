@@ -17,11 +17,10 @@ const PostRowAction = ({ rowId }: PostRowActionProps) => {
   const route = useRouter()
 
   const handleEdit = () => {
-      const params = new URLSearchParams(searchParams)
-      params.set('edit', String(rowId))
-      console.log(`${pathname}?${params.toString()}`)
-      route.push(`${pathname}?${params.toString()}`)
-   }
+    const params = new URLSearchParams(searchParams)
+    params.set('edit', String(rowId))
+    route.push(`${pathname}?${params.toString()}`)
+  }
 
   return (
     <DropdownMenu>

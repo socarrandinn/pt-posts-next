@@ -42,6 +42,7 @@ export const usePostCreateForm = ({ initValue, onClose }: PostFormProps) => {
 
     mutationFn: (post: IPost): Promise<IPost> => {
       if (post.id) {
+        console.log(post, 'emtre')
         return PostService.updatePost(post)
       }
       return PostService.createPost(post)
