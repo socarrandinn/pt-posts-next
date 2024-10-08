@@ -6,7 +6,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from '@/components/ui/input'
 
 type PostFormProps = {
-  initValues?: Partial<IPost>
+  initValue?: Partial<IPost>
   onClose?: () => void,
   form: any
   onSubmit: any
@@ -24,7 +24,7 @@ const PostForm = ({ form, onSubmit }: PostFormProps) => {
             <FormItem>
               <FormLabel>{t('post.field.title')}</FormLabel>
               <FormControl>
-                <Input type="number" placeholder={t('post.field.title')} {...field} />
+                <Input type="text" placeholder={t('post.field.title')} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

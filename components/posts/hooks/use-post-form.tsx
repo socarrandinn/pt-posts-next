@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form"
 import { postSchema } from "../schemas/post.schema"
 import { z } from "zod"
 import { useTranslations } from "next-intl"
-import { useCallback } from "react"
+import { useCallback, useEffect } from "react"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { toast } from "sonner"
 import { IPost } from "../interfaces/post"
@@ -12,18 +12,24 @@ import { PostService } from "@/lib/services"
 import { POST_LIST_KEY } from "../constants/query"
 
 type PostFormProps = {
-  initValues?: Partial<IPost>
+  initValue?: Partial<IPost>
   onClose?: () => void
 }
-export const usePostCreateForm = ({ initValues, onClose }: PostFormProps) => {
+export const usePostCreateForm = ({ initValue, onClose }: PostFormProps) => {
   const t = useTranslations()
   const schema = postSchema(t)
   const queryClient = useQueryClient()
 
   const form = useForm<z.infer<typeof schema>>({
     resolver: zodResolver(schema),
-    defaultValues: initValues
+    defaultValues: initValue
   })
+
+  useEffect(() => {
+    if (initValue) {
+      form.reset(initValue)
+    }
+  }, [form, initValue])
 
   const {
     mutate,

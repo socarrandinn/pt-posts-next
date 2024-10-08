@@ -4,6 +4,7 @@ import { postColumns } from "./constants/posts.column"
 import { PostService } from "@/lib/services"
 import TableSkeleton from "../customers/table/table-skeleton"
 import PostToolbar from "./components/post-toogle"
+import { PostEditDialog } from "./components/post-edit-dialog"
 
 
 export const PostList = async () => {
@@ -13,6 +14,7 @@ export const PostList = async () => {
     <Suspense fallback={<TableSkeleton columns={postColumns} />}>
       <PostToolbar />
       <Table columns={postColumns} data={posts} />
+      <PostEditDialog />
     </Suspense>
   )
 }

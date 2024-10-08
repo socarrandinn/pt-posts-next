@@ -12,18 +12,20 @@ import { useTranslations } from "next-intl"
 import { IPost } from "../interfaces/post"
 import { ButtonLoading } from "@/components/ui/button-loading"
 import { usePostCreateForm } from "../hooks/use-post-form"
+import { Suspense } from "react"
+import PostSkeletonForm from "./post-skeleton-form"
 
 type PostCreateDialogProps = {
   title: string
   subtitle?: string
-  initValues?: Partial<IPost>
+  initValue?: IPost
   open: boolean
   onClose?: () => void
-  onOpen: () => void
+  onOpen?: () => void
 }
-export function PostCreateDialog({ title, subtitle, initValues, open, onOpen, onClose }: PostCreateDialogProps) {
+export function PostCreateDialog({ title, subtitle, initValue, open, onOpen, onClose }: PostCreateDialogProps) {
   const t = useTranslations()
-  const { form, onSubmit, isPending } = usePostCreateForm({ initValues, onClose })
+  const { form, onSubmit, isPending } = usePostCreateForm({ initValue, onClose })
   return (
     <Dialog open={open} modal onOpenChange={onOpen}>
       <DialogContent className="sm:max-w-2xl">
@@ -32,7 +34,9 @@ export function PostCreateDialog({ title, subtitle, initValues, open, onOpen, on
           {subtitle && <DialogDescription>{subtitle}</DialogDescription>}
         </DialogHeader>
 
-        <PostForm initValues={initValues} onClose={onClose} form={form} onSubmit={onSubmit} />
+        <Suspense fallback={<PostSkeletonForm />}>
+          <PostForm initValue={initValue} onClose={onClose} form={form} onSubmit={onSubmit} />
+        </Suspense>
 
         <DialogFooter className="sm:justify-end">
           <Button onClick={onClose} type="button" variant="secondary">

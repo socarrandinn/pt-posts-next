@@ -4,15 +4,25 @@ import { DotsHorizontalIcon } from '@radix-ui/react-icons'
 import React from 'react'
 import { IPost } from '../interfaces/post'
 import { useTranslations } from 'next-intl'
+import { usePathname, useSearchParams, useRouter } from 'next/navigation'
 
 type PostRowActionProps = {
   rowId: number
   record: IPost
 }
-const PostRowAction = ({ rowId, record }: PostRowActionProps) => {
+const PostRowAction = ({ rowId }: PostRowActionProps) => {
   const t = useTranslations('')
-  console.log(rowId)
-  console.log(record)
+  const searchParams = useSearchParams()
+  const pathname = usePathname()
+  const route = useRouter()
+
+  const handleEdit = () => {
+      const params = new URLSearchParams(searchParams)
+      params.set('edit', String(rowId))
+      console.log(`${pathname}?${params.toString()}`)
+      route.push(`${pathname}?${params.toString()}`)
+   }
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -23,7 +33,7 @@ const PostRowAction = ({ rowId, record }: PostRowActionProps) => {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuLabel>{t('common.actions')}</DropdownMenuLabel>
-        <DropdownMenuItem>
+        <DropdownMenuItem onClick={handleEdit}>
           {t('post.edit')}
         </DropdownMenuItem>
       </DropdownMenuContent>
